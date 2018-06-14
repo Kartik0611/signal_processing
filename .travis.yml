@@ -4,4 +4,4 @@ before_install:
  - sudo apt-get install scilab
 
 script:
-- scilab -nwni -f test.sce
+- scilab -nw -f test.sce

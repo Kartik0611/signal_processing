@@ -2,8 +2,7 @@
 exec("loader.sce")
 exec("builder.sce")
 
-cd macros/
-getd .
+getd macros/
 
 test_pass=[]
 res=[]
@@ -12,7 +11,7 @@ res=[]
 /////////Test case for       1)armcov                  //////////
 
 A = [1 -2.7607 3.8106 -2.6535 0.9238];
-y=fscanfMat("txt1_armcov.txt")
+y=fscanfMat("macros/txt1_armcov.txt")
 
 arcoeffs = armcov(y,4);
 arcoeffs =roundn(arcoeffs,4)
@@ -211,7 +210,7 @@ inputVmax = VmaxPk*sin(2*%pi*Fi*t);
 outputVmax = helperHarmonicDistortionAmplifier(inputVmax);
 outputVmax=outputVmax';
 outputVmax=roundn(outputVmax,5);
-M=fscanfMat("txt3_helperHDA.txt")
+M=fscanfMat("macros/txt3_helperHDA.txt")
 
 if(M==outputVmax)
            test_pass=[test_pass,1]
@@ -333,8 +332,8 @@ res=find(test_pass==0)
 
 if(res~=[])
 	disp("One or more tests failed")
-	exit(1)
+	//exit(1)
 else
     disp("pass")
-	exit
+	//exit
 end
