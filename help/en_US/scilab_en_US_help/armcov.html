@@ -1,0 +1,81 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>armcov</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="arma_rnd.html">&lt;&lt; arma_rnd</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_2b4a37cc3bbf1736615b28c17ac363ec.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="aryule.html">aryule &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_2b4a37cc3bbf1736615b28c17ac363ec.html">FOSSEE Signal Processing Toolbox</a> &gt; armcov</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">armcov</h1>
+    <p class="refpurpose">This function uses the modified covariance method to fit a pth-order autoregressive (AR) model to the input signal x</p></div>
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">a</span><span class="default">=</span><span class="functionid">armcov</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">p</span><span class="default">)</span>
+<span class="default">[</span><span class="default">a</span><span class="default">,</span><span class="default">e</span><span class="default">] = </span><span class="functionid">armcov</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">p</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">x:</span>
+      <dd><p class="para">input signal</p></dd></dt>
+   <dt><span class="term">p:</span>
+      <dd><p class="para">order</p></dd></dt>
+   <dt><span class="term">a:</span>
+      <dd><p class="para">output of an AR system driven by white noise</p></dd></dt>
+   <dt><span class="term">e:</span>
+      <dd><p class="para">variance estimate</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This function uses the modified covariance method to fit a pth-order autoregressive (AR) model to the input signal x.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">A</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilaboperator">-</span><span class="scilabnumber">2.7607</span> <span class="scilabnumber">3.8106</span> <span class="scilaboperator">-</span><span class="scilabnumber">2.6535</span> <span class="scilabnumber">0.9238</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">y</span> <span class="scilaboperator">=</span> <a class="scilabmacro" href="scilab://filter">filter</a><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabid">A</span><span class="scilabdefault">,</span><span class="scilabnumber">0.2</span><span class="scilaboperator">*</span><a class="scilabcommand" href="scilab://rand">rand</a><span class="scilabopenclose">(</span><span class="scilabnumber">1024</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabstring">&#0034;</span><span class="scilabstring">normal</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">arcoeffs</span> <span class="scilaboperator">=</span> <span class="scilabid">armcov</span><span class="scilabopenclose">(</span><span class="scilabid">y</span><span class="scilabdefault">,</span><span class="scilabnumber">4</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="arma_rnd.html">&lt;&lt; arma_rnd</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_2b4a37cc3bbf1736615b28c17ac363ec.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="aryule.html">aryule &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

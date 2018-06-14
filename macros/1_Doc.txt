@@ -1,0 +1,195 @@
+1. Function: arParEst.sci
+
+There is no Matlab inbuilt function as "arParEst".I couldn't find documentation for this function.
+
+
+ 
+2. Function Name: arBurg.sci
+
+* THE FUNCTION IS NOT WORKING CORRECTLY
+* Invalid index.
+at line      58 of function arburg
+* The function works properly in octave but not in scilab.
+
+
+3. Function: armcov.sci
+
+Comments are added to the scilab code.
+
+
+
+4. Function Name: aryule.sci
+
+* THE FUNCTION IS NOT WORKING CORRECTLY
+* 'toeplitz' undefined near line 67 column 11 ans
+* The function works properly in octave but not in scilab.
+
+
+5. Function: bitrevorder.sci
+
+* THE FUNCTION IS NOT WORKING CORRECTLY
+* 'dec2base' undefined near line 41 column 31 y
+* The function works properly in octave but not in scilab.
+* The function has to check the number of input arguments, so the switch case has written.
+
+
+6. Function: buttord.sci
+
+In the line 35 and 38, it is not mentioned which octave function is to be used.
+So "callOctave(Wp,Ws,Rp,Rs)" in line 35 and 38 should be replaced by "callOctave(“buttord",Wp,Ws,Rp,Rs)".
+
+
+
+
+7. Function: cconv.sci
+
+Comments are added to the scilab code.
+
+
+
+8. Function: cheby2.sci
+
+* In line #13,19,20(comment lines) the "rp" should be replaced by "rs".
+* In line #38, "if(lhs<4 | lhs<2)" should be replaced by "if(lhs>4 | lhs<2)". That is if lhs "greater" than 4, it should result an error.
+* In line #45,47,49,53,55,57 the "rp" should be replaced by "rs".
+* In line #61,62,63 the "rp" should be removed.
+
+After doing this, the function "cheby2.sci" works correctly.
+
+
+
+9. Function: check.sci
+
+Comments are added to the scilab code.
+In the output it is showing : "Undefined variable: s". If the output argument is removed, it doesn't show any error.
+
+
+
+10.Function: cummax.sci
+
+The expected output given for the input "v = [8 9 1 10 6 1 3 6 10 10];M = cummax(v);", in the code was wrong.
+It should have been [8 9 9 10 10 10 10 10 10 10].
+ 
+
+11.Function: decimate.sci
+
+Comments are added to the scilab code.
+
+*In the line# 8 and 11, "nargin" used is invalid in scilab. So use "argn(2)" instead of "nargin".
+*In line# 20, "(strcmp (ftype, {"fir", "iir"})" , this line yields an error.
+ So replace : " if (~ and(strcmp (ftype, {"fir", "iir"}))) " by "if(strcmp(ftype,"iir") & strcmp(ftype,"fir"))".
+Now the function will work properly.
+12.Function: dutycycle.sci
+
+Here no comments are given for the function.
+The example given in the matlab documentation uses loading of a matlab file which is not in scilab.
+The output we get for the scilab test case is an empty array, which is not the correct output.
+
+
+13.Function: ellip.sci
+
+THE FUNCTION IS NOT WORKING CORRECTLY
+'ellipke' undefined near line 121 column 9 b
+
+
+
+14.Function: filtfilt.sci
+
+In the given example, the output arguments are 2, which has to be 1, so replace the output arguments "[a,b]" by "[y]".
+use correct scilab syntax for handling imaginary numbers.
+
+
+
+15.Function: filtic.sci
+
+use correct scilab syntax for handling imaginary numbers.
+
+
+
+16.Function: firtype.sci
+
+NOTE : In the example showed in matlab documentation for firtype, the output of "fir1" function given as input for the "firtype" function. But if we run the "fir1" function (to get the input for "firtype" function), it is showing some error. (But "firtype" function works correctly).
+
+Comments are added to the scilab code.
+
+
+
+17.Function: fwhmjlt.sci
+
+NOTE: Here, in this function, the function name is given as "bitrevorder". It is good to replace this with the name same as that of filename.
+
+Comments are added to the scilab code.
+18.Function: helperHarmonicDistortionAmplifier.sci
+
+Test case are written for the scilab code.
+
+*Since matlab function "helperPlotPeriodogram" is not in silab, the periodogram power spectrum estimate is not done.
+
+
+
+19.Function: icceps.sci
+
+Test case are written for the scilab code.
+
+* The output of "cceps" function in the toolbox doesn't matches with that of the matlab "cceps" function.
+
+
+
+20. Function: impinvar.sci
+
+In line# 34,36,38 the output arguments "[b,a]" , should be replaced by "[b_out,a_out]".
+
+*THE FUNCTION IS NOT WORKING CORRECTLY
+'ismember' undefined near line 107 column 15
+
+*The denominator(ay) of the test case example output doesn't match with that of the octave output.
+
+
+
+21.Function: impz.sci
+
+Test Cases are added
+Comments and Description are written
+
+
+22.Function: impzlength.sci
+
+* In line# 8(commented line), "a" and "b" should be replaced by "b" and "a" , because the numerator coefficient is "b" and denominator coefficient is "a". Here it was interchanged.
+
+Output is written for the given test case.
+One more test case has been added.
+
+
+
+23.Function: interp.sci
+
+*The error which the scilab shows is : 'unique' undefined near line 118 column 9 , but in Octave the function works properly.
+
+
+
+24.Function: intfilt.sci
+
+* The output of the given test case are of 220 and 400 length sequence, which will be difficult to write in the function.
+
+
+
+25.Function: invimpinvar.sci
+
+*THE FUNCTION IS NOT WORKING CORRECTLY
+'ismember' undefined near line 107 column 15
+
+*The denominator(ay) of the test case example's output doesn't match with that of the octave output.
+
+
+
+26.Function: is2rc.sci
+
+Output is written for the test case.
+One more test case have been added.
+
+
+
+27.Function: isallpass.sci
+
+Test cases have been added.
+
