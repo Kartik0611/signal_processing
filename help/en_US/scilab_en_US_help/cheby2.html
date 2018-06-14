@@ -16,7 +16,7 @@
 
       </td>
       <td width="40%" class="center">
-      	<span class="top"><a href="section_2b4a37cc3bbf1736615b28c17ac363ec.html">FOSSEE Signal Processing Toolbox</a></span>
+      	<span class="top"><a href="section_b6e7ebf2688a002d929fe29571a1c110.html">FOSSEE Signal Processing Toolbox</a></span>
 
       </td>
       <td width="30%" class="next">
@@ -29,7 +29,7 @@
 
 
 
-    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_2b4a37cc3bbf1736615b28c17ac363ec.html">FOSSEE Signal Processing Toolbox</a> &gt; cheby2</span>
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_b6e7ebf2688a002d929fe29571a1c110.html">FOSSEE Signal Processing Toolbox</a> &gt; cheby2</span>
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">cheby2</h1>
@@ -48,7 +48,7 @@
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">n:</span>
       <dd><p class="para">positive integer value</p></dd></dt>
-   <dt><span class="term">rp:</span>
+   <dt><span class="term">rs:</span>
       <dd><p class="para">non negative scalar value</p></dd></dt>
    <dt><span class="term">w:</span>
       <dd><p class="para">vector, all elements must be in the range [0,1]</p></dd></dt></dl></div>
@@ -57,19 +57,20 @@
    <p class="para">This is an Octave function.
 This function generates a Chebyshev type II filter with rs dB of stopband attenuation.
 The fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.
-[b, a] = cheby2(n, Rp, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.
-[b, a] = cheby2(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
+[b, a] = cheby2(n, rs, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.
+[b, a] = cheby2(n, rs, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
 [z, p, g] = cheby2(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
 [...] = cheby2(...,’s’) returns a Laplace space filter, w can be larger than 1.
 [a,b,c,d] = cheby2(...) returns state-space matrices.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
    <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">a</span><span class="scilabdefault">,</span><span class="scilabid">b</span><span class="scilabdefault">,</span><span class="scilabid">c</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">cheby2</span><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">5</span><span class="scilabdefault">,</span><span class="scilabnumber">0.7</span><span class="scilabdefault">,</span><span class="scilabstring">&#0034;</span><span class="scilabstring">high</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span>
-<span class="scilabid">a</span> <span class="scilaboperator">=</span>
-<span class="scilaboperator">-</span><span class="scilabnumber">0.31645</span> <span class="scilaboperator">-</span> <span class="scilabnumber">0.94861</span><span class="scilabid">i</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.31645</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.94861</span><span class="scilabid">i</span>
-<span class="scilabid">b</span> <span class="scilaboperator">=</span>
-<span class="scilaboperator">-</span><span class="scilabnumber">0.39388</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.53138</span><span class="scilabid">i</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.39388</span> <span class="scilaboperator">-</span> <span class="scilabnumber">0.53138</span><span class="scilabid">i</span>
-<span class="scilabid">c</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">0.47528</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+<span class="scilabcomment">//Expected Output</span>
+<span class="scilabcomment">//a =</span>
+<span class="scilabcomment">//-0.31645 - 0.94861i  -0.31645 + 0.94861i</span>
+<span class="scilabcomment">//b =</span>
+<span class="scilabcomment">//-0.39388 + 0.53138i  -0.39388 - 0.53138i</span>
+<span class="scilabcomment">//c =  0.47528</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">
@@ -81,7 +82,7 @@ The fourth parameter takes in high or low, default value is low. The cutoff is p
 
       </td>
       <td width="40%" class="center">
-      	<span class="top"><a href="section_2b4a37cc3bbf1736615b28c17ac363ec.html">FOSSEE Signal Processing Toolbox</a></span>
+      	<span class="top"><a href="section_b6e7ebf2688a002d929fe29571a1c110.html">FOSSEE Signal Processing Toolbox</a></span>
 
       </td>
       <td width="30%" class="next">

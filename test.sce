@@ -1,3 +1,8 @@
+
+exec("loader.sce")
+exec("builder.sce")
+
+cd macros/
 getd .
 
 test_pass=[]
@@ -24,18 +29,18 @@ end
 
 /////////Test case for       2) buttord                  //////////
 
-Wp = 40/500;
-Ws = 150/500;
-
-[n, Wn] = buttord(Wp, Ws, 3, 60);
-Wn=roundn(Wn,7)
-
-if(Wn==0.0800376  &  n==5)
-           test_pass=[test_pass,1]
-else
-	test_pass=[test_pass,0]
-	disp("buttord Test failed")
-end
+//Wp = 40/500;
+//Ws = 150/500;
+//
+//[n, Wn] = buttord(Wp, Ws, 3, 60);
+//Wn=roundn(Wn,7)
+//
+//if(Wn==0.0800376  &  n==5)
+//           test_pass=[test_pass,1]
+//else
+//	test_pass=[test_pass,0]
+//	disp("buttord Test failed")
+//end
 //
 //
 ///////////////////////////////////////////////
@@ -63,24 +68,24 @@ end
 //
 ///////////Test case for       4) cheby2                  //////////
 //
-x=2;
-y=5;
-z=0.7;
-
-[a,b,c]=cheby2(x,y,z,"high");
-a=roundn(a,4);
-b=roundn(b,4);
-c=roundn(c,4);
-
-if(a==[-0.3165-0.9486*%i  -0.3165+0.9486*%i]   & b==[-0.3939+0.5314*%i -0.3939-0.5314*%i])
-    if(c==0.4753)
-           test_pass=[test_pass,1]
-    else
-	test_pass=[test_pass,0]
-	disp("cheby2 Test failed")
-    end
-end
+//x=2;
+//y=5;
+//z=0.7;
 //
+//[a,b,c]=cheby2(x,y,z,"high");
+//a=roundn(a,4);
+//b=roundn(b,4);
+//c=roundn(c,4);
+//
+//if(a==[-0.3165-0.9486*%i  -0.3165+0.9486*%i]   & b==[-0.3939+0.5314*%i -0.3939-0.5314*%i])
+//    if(c==0.4753)
+//           test_pass=[test_pass,1]
+//    else
+//	test_pass=[test_pass,0]
+//	disp("cheby2 Test failed")
+//    end
+//end
+////
 ///////////////////////////////////////////////
 //
 //
@@ -102,57 +107,57 @@ end
 //
 ///////////Test case for       6) decimate                  //////////
 //
-t = 0:.00025:1;
-x = sin(2*%pi*30*t) + sin(2*%pi*60*t);
-
-y = decimate(x,4);
-y=y';        //converting it to column matrix
-y=roundn(y,4);
-M=fscanfMat("txt2_decimate.txt")
-
-if(M==y)
-           test_pass=[test_pass,1]
-    else
-	test_pass=[test_pass,0]
-	disp("decimate Test failed")
-end
+//t = 0:.00025:1;
+//x = sin(2*%pi*30*t) + sin(2*%pi*60*t);
+//
+//y = decimate(x,4);
+//y=y';        //converting it to column matrix
+//y=roundn(y,4);
+//M=fscanfMat("txt2_decimate.txt")
+//
+//if(M==y)
+//           test_pass=[test_pass,1]
+//    else
+//	test_pass=[test_pass,0]
+//	disp("decimate Test failed")
+//end
 //
 ///////////////////////////////////////////////
 //
 //
 ///////////Test case for       7) filtfilt                  //////////
+////
+//b=1;
+//a=2*%i;
+//x=[%i -4 0];
 //
-b=1;
-a=2*%i;
-x=[%i -4 0];
-
-y=filtfilt (b,a,x)
-
-if(y==[-0.25*%i 1 0])
-           test_pass=[test_pass,1]
-    else
-	test_pass=[test_pass,0]
-	disp("filtfilt Test failed")
-end
+//y=filtfilt (b,a,x)
+//
+//if(y==[-0.25*%i 1 0])
+//           test_pass=[test_pass,1]
+//    else
+//	test_pass=[test_pass,0]
+//	disp("filtfilt Test failed")
+//end
 //
 ///////////////////////////////////////////////
 //
 //
 ///////////Test case for       8) filtic                  //////////
 //
-b=[%i,1,-%i,5];
-a=[1,2,3*%i];
-y= [0.8*%i,7,9];
-
-zf=filtic(b,a,y)
-zf=roundn(zf,4)
-
-if(zf==[-22.6*%i;2.4;0])
-           test_pass=[test_pass,1]
-    else
-	test_pass=[test_pass,0]
-	disp("filtic Test failed")
-end
+//b=[%i,1,-%i,5];
+//a=[1,2,3*%i];
+//y= [0.8*%i,7,9];
+//
+//zf=filtic(b,a,y)
+//zf=roundn(zf,4)
+//
+//if(zf==[-22.6*%i;2.4;0])
+//           test_pass=[test_pass,1]
+//    else
+//	test_pass=[test_pass,0]
+//	disp("filtic Test failed")
+//end
 //
 //
 ///////////////////////////////////////////////
@@ -176,18 +181,18 @@ end
 //
 ///////////Test case for       10)fwhmjlt                  //////////
 //
-t=-50:0.01:50;
-y=(1/(2*sqrt(2*%pi)))*exp(-(t.^2)/8);
-
-z=fwhmjlt(y)
-z=roundn(z,4)
-
-if(z==470.9644)
-           test_pass=[test_pass,1]
-else
-	test_pass=[test_pass,0]
-	disp("fwhmjlt Test failed")
-end
+//t=-50:0.01:50;
+//y=(1/(2*sqrt(2*%pi)))*exp(-(t.^2)/8);
+//
+//z=fwhmjlt(y)
+//z=roundn(z,4)
+//
+//if(z==470.9644)
+//           test_pass=[test_pass,1]
+//else
+//	test_pass=[test_pass,0]
+//	disp("fwhmjlt Test failed")
+//end
 //
 ///////////////////////////////////////////////
 //
@@ -204,8 +209,8 @@ t = 0:1/Fs:Tstop;
 inputVmax = VmaxPk*sin(2*%pi*Fi*t);
 
 outputVmax = helperHarmonicDistortionAmplifier(inputVmax);
-outputVmax=outputVmax'
-outputVmax=roundn(outputVmax,1)
+outputVmax=outputVmax';
+outputVmax=roundn(outputVmax,5);
 M=fscanfMat("txt3_helperHDA.txt")
 
 if(M==outputVmax)
@@ -238,18 +243,18 @@ end
 //
 ///////////Test case for       12)impz                 //////////
 //
-b=[0 1 1];
-a=[1 -3 3 -1];
-n=10;
-
-[x_r,t_r]=impz(b,a,n)
-
-if(t_r==[0 1 2 3 4 5 6 7 8 9] & x_r==[0 1 4 9 16 25 36 49 64 81]) 
-           test_pass=[test_pass,1]
-else
-	test_pass=[test_pass,0]
-	disp("impz Test failed")
-end
+//b=[0 1 1];
+//a=[1 -3 3 -1];
+//n=10;
+//
+//[x_r,t_r]=impz(b,a,n)
+//
+//if(t_r==[0 1 2 3 4 5 6 7 8 9] & x_r==[0 1 4 9 16 25 36 49 64 81]) 
+//           test_pass=[test_pass,1]
+//else
+//	test_pass=[test_pass,0]
+//	disp("impz Test failed")
+//end
 //
 ///////////////////////////////////////////////
 //
