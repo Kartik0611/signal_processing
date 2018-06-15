@@ -5,3 +5,7 @@ before_install:
 
 script:
 - scilab -nw -f test.sce
+
+notifications:
+  slack:
+    on_success: always
