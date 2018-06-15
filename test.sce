@@ -332,8 +332,8 @@ res=find(test_pass==0)
 
 if(res~=[])
 	disp("One or more tests failed")
-	//exit(1)
+	exit(1)
 else
     disp("pass")
-	//exit
+	exit
 end
