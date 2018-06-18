@@ -42,7 +42,7 @@
    <varlistentry><term>rs:</term>
       <listitem><para> non negative scalar value</para></listitem></varlistentry>
    <varlistentry><term>w:</term>
-      <listitem><para> vector, all elements must be in the range [0,1]</para></listitem></varlistentry>
+      <listitem><para>Angular cutoff frequency vector, all elements must be in the range [0,1]</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 

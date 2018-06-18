@@ -33,7 +33,27 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">fwhmjlt</h1>
-    <p class="refpurpose">rhs = argn(2)</p></div>
+    <p class="refpurpose">This function Computes peak full-width at half maximum</p></div>
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">f</span><span class="default"> = </span><span class="default">fwhm</span><span class="default"> (</span><span class="default">y</span><span class="default">)</span>
+<span class="default">f</span><span class="default"> = </span><span class="default">fwhm</span><span class="default"> (</span><span class="default">x</span><span class="default">, </span><span class="default">y</span><span class="default">) </span>
+<span class="default">f</span><span class="default"> = </span><span class="default">fwhm</span><span class="default"> (…, </span>&#0034;<span class="default">zero</span>&#0034;<span class="default">)</span>
+<span class="default">f</span><span class="default"> = </span><span class="default">fwhm</span><span class="default"> (…, </span>&#0034;<span class="default">min</span>&#0034;<span class="default">)</span>
+<span class="default">f</span><span class="default"> = </span><span class="default">fwhm</span><span class="default"> (…, </span>&#0034;<span class="default">alevel</span>&#0034;<span class="default">, </span><span class="default">level</span><span class="default">)</span>
+<span class="default">f</span><span class="default"> = </span><span class="default">fwhm</span><span class="default"> (…, </span>&#0034;<span class="default">rlevel</span>&#0034;<span class="default">, </span><span class="default">level</span><span class="default">)</span></pre></div></div>
+
+
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Compute peak full-width at half maximum (FWHM) or at another level of peak maximum for vector or matrix    data y, optionally sampled as y(x). If y is a matrix, return FWHM for each column as a row vector.<p class="para"></p>The default option &#0034;zero&#0034; computes fwhm at half maximum, i.e. 0.5*max(y). The option &#0034;min&#0034; computes fwhm at the middle curve, i.e. 0.5*(min(y)+max(y)). <p class="para"></p>The option &#0034;rlevel&#0034; computes full-width at the given relative level of peak profile<p class="para"></p>The option &#0034;alevel&#0034; computes full-width at the given absolute level of y.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">t</span><span class="scilaboperator">=</span><span class="scilaboperator">-</span><span class="scilabnumber">50</span><span class="scilabspecial">:</span><span class="scilabnumber">0.01</span><span class="scilabspecial">:</span><span class="scilabnumber">50</span><span class="scilabdefault">;</span>
+<span class="scilabid">y</span><span class="scilaboperator">=</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilaboperator">*</span><a class="scilabcommand" href="scilab://sqrt">sqrt</a><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilaboperator">*</span><span class="scilabconstants">%pi</span><span class="scilabopenclose">)</span><span class="scilabopenclose">)</span><span class="scilabopenclose">)</span><span class="scilaboperator">*</span><a class="scilabcommand" href="scilab://exp">exp</a><span class="scilabopenclose">(</span><span class="scilaboperator">-</span><span class="scilabopenclose">(</span><span class="scilabid">t</span><span class="scilaboperator">.^</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span><span class="scilaboperator">/</span><span class="scilabnumber">8</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">z</span><span class="scilaboperator">=</span><span class="scilabid">fwhmjlt</span><span class="scilabopenclose">(</span><span class="scilabid">y</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//Expected Output</span>
+<span class="scilabcomment">//470.96442</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

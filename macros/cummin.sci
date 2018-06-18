@@ -31,7 +31,7 @@ function M = cummin(varargin)
     //     v = [8 9 1 10 6 1 3 6 10 10]
     //     M = cummin(v)
     //        
-    // Expected output: [8 9 9 10 10 10 10 10 10 10]
+    // Expected output: [8 8 1 1 1 1 1 1 1 1]
     //
     // Authors
     // Ayush Baid

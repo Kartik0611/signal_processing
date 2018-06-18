@@ -33,7 +33,7 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">impz</h1>
-    <p class="refpurpose"></p></div>
+    <p class="refpurpose">It gives Impulse response of digital filter</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
@@ -42,6 +42,36 @@
 <span class="default">x_r</span><span class="default"> = </span><span class="functionid">impz</span><span class="default">(</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">n</span><span class="default">)</span>
 <span class="default">x_r</span><span class="default"> = </span><span class="functionid">impz</span><span class="default">(</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">n</span><span class="default">, </span><span class="default">fs</span><span class="default">)</span>
 <span class="default">[</span><span class="default">x_r</span><span class="default">, </span><span class="default">t_r</span><span class="default">] = </span><span class="functionid">impz</span><span class="default">(</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">n</span><span class="default">, </span><span class="default">fs</span><span class="default">)</span></pre></div></div>
+
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">x_r:</span>
+      <dd><p class="para">impz chooses the number of samples and returns the response in the column vector, x_r.</p></dd></dt>
+   <dt><span class="term">t_r:</span>
+      <dd><p class="para">impz returns the sample times in the column vector, t_r</p></dd></dt>
+   <dt><span class="term">b:</span>
+      <dd><p class="para">numerator coefficients of the filter</p></dd></dt>
+   <dt><span class="term">a:</span>
+      <dd><p class="para">denominator coefficients of the filter</p></dd></dt>
+   <dt><span class="term">n:</span>
+      <dd><p class="para">samples of the impulse response   t(by default ,n = length(t) and  is computed automatically.</p></dd></dt>
+   <dt><span class="term">fs:</span>
+      <dd><p class="para">sampling frequency</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">[x_r,t_r] = impz(b,a) returns the impulse response of the filter with numerator coefficients, b, and denominator coefficients, a. impz chooses the number of samples and returns the response in the column vector, x_r, and the sample times in the column vector, t_r. t_r = [0:n-1]&#0039; and n = length(t) is computed automatically.</p></div>
+
+<div class="refsection"><h3 class="title">Example 1</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">x_r</span><span class="scilabdefault">,</span><span class="scilabid">t_r</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">impz</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">0</span> <span class="scilabnumber">1</span> <span class="scilabnumber">1</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilaboperator">-</span><span class="scilabnumber">3</span> <span class="scilabnumber">3</span> <span class="scilaboperator">-</span><span class="scilabnumber">1</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//EXPECTED OUTPUT :</span>
+<span class="scilabcomment">// t_r = 0.    1.     2.    3.    4.       5.      6.      7.      8.       9</span>
+<span class="scilabcomment">// x_r=  0.    1.    4.    9.    16.    25.    36.    49     64     81</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Example 2</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">x_r</span><span class="scilabdefault">,</span><span class="scilabid">t_r</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">impz</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilabnumber">1</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabnumber">5</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//EXPECTED OUTPUT</span>
+<span class="scilabcomment">// t_r =   0.    1.    2.    3.    4</span>
+<span class="scilabcomment">//x_r =   1.  - 1.    1.  - 1.    1.</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

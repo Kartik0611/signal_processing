@@ -37,33 +37,48 @@
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
-   <div class="synopsis"><pre><span class="default">len</span><span class="default"> = </span><span class="functionid">impzlength</span><span class="default">(</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">tol</span><span class="default">)</span>
-<span class="default">returns</span> <span class="default">the</span> <span class="default">impulse</span> <span class="default">response</span> <span class="default">length</span> <span class="default">for</span> <span class="default">the</span> <span class="default">causal</span> <span class="default">discrete</span><span class="default">-</span><span class="default">time</span> <span class="default">filter</span>
-<span class="default">with</span> <span class="default">the</span> <span class="default">transfer</span> <span class="default">function</span> <span class="default">coefficients</span> <span class="default">for</span> <span class="default">numerator</span> <span class="default">and</span> <span class="default">denominator</span> <span class="default">in</span>
-<span class="default">a</span> <span class="default">and</span> <span class="default">b</span> <span class="default">respectively</span><span class="default">. </span><span class="default">For</span> <span class="default">stable</span> <span class="default">IIR</span> <span class="default">filters</span><span class="default">, </span><span class="default">len</span> <span class="default">is</span> <span class="default">the</span> <span class="default">effective</span> <span class="default">length</span>
-<span class="default">impulse</span> <span class="default">response</span> <span class="default">length</span><span class="default">, </span><span class="default">i</span><span class="default">.</span><span class="default">e</span><span class="default">. </span><span class="default">the</span> <span class="default">length</span> <span class="default">after</span> <span class="default">which</span> <span class="default">the</span> <span class="default">response</span> <span class="default">is</span>
-<span class="default">essentially</span> <span class="default">zero</span>
-<span class="default">len</span><span class="default"> = </span><span class="functionid">impzlength</span><span class="default">(</span><span class="default">sos</span><span class="default">)</span>
-<span class="default">returns</span> <span class="default">the</span> <span class="default">impulse</span> <span class="default">response</span> <span class="default">length</span> <span class="default">of</span> <span class="default">the</span> <span class="default">filter</span> <span class="default">specified</span> <span class="default">by</span> <span class="default">second</span>
-<span class="default">order</span> <span class="default">sections</span> <span class="default">matrix</span><span class="default">. </span><span class="default">sos</span> <span class="default">is</span> <span class="default">a</span> <span class="default">Kx6</span> <span class="default">matrix</span><span class="default">, </span><span class="default">where</span> <span class="default">K</span> <span class="default">is</span> <span class="default">the</span> <span class="default">number</span> <span class="default">of</span>
-<span class="default">sections</span><span class="default">. </span><span class="default">Each</span> <span class="default">row</span> <span class="default">of</span> <span class="default">the</span> <span class="default">sos</span> <span class="default">matrix</span> <span class="default">corresponds</span> <span class="default">to</span> <span class="default">a</span> <span class="default">second</span> <span class="default">order</span>
-<span class="default">biquad</span> <span class="default">filter</span>
-<span class="default">len</span><span class="default"> = </span><span class="functionid">impzlength</span><span class="default">(</span><span class="default">__</span><span class="default">, </span><span class="default">tol</span><span class="default">)</span>
-<span class="default">specifies</span> <span class="default">a</span> <span class="default">tolerance</span> <span class="default">for</span> <span class="default">estimating</span> <span class="default">the</span> <span class="default">effective</span> <span class="default">impulse</span> <span class="default">response</span>
-<span class="default">length</span> <span class="default">in</span> <span class="default">case</span> <span class="default">of</span> <span class="default">an</span> <span class="default">IIR</span> <span class="default">filter</span><span class="default">. </span><span class="default">By</span> <span class="default">default</span><span class="default">, </span><span class="default">tol</span> <span class="default">is</span><span class="default"> 5</span><span class="default">e</span><span class="default">-5. </span><span class="default">Increasing</span> <span class="default">tol</span>
-<span class="default">leads</span> <span class="default">to</span> <span class="default">shorter</span> <span class="default">len</span> <span class="default">and</span> <span class="default">vice</span><span class="default">-</span><span class="default">versa</span></pre></div></div>
+   <div class="synopsis"><pre><span class="default">len</span><span class="default">=</span><span class="functionid">impzlength</span><span class="default">(</span><span class="default">b</span><span class="default">,</span><span class="default">a</span><span class="default">)</span>
+<span class="default">len</span><span class="default">=</span><span class="functionid">impzlength</span><span class="default">(</span><span class="default">sos</span><span class="default">)</span>
+<span class="default">len</span><span class="default">=</span><span class="functionid">impzlength</span><span class="default">(</span><span class="default">b</span><span class="default">,</span><span class="default">a</span><span class="default">,</span><span class="default">tol</span><span class="default">)</span></pre></div></div>
 
 <div class="refsection"><h3 class="title">Parameters</h3>
-   <dl></dl></div>
+   <dl><dt><span class="term">b:</span>
+      <dd><p class="para">Numerator coefficients. real|complex - vector|scalar</p></dd></dt>
+   <dt><span class="term">a:</span>
+      <dd><p class="para">Denominator coefficients. real|complex - vector|scalar</p></dd></dt>
+   <dt><span class="term">sos:</span>
+      <dd><p class="para">Second order estimates.  real|complex - matrix (K-by-6)</p></dd></dt>
+   <dt><span class="term">tol:</span>
+      <dd><p class="para">Tolerance for estimating the effective length of an IIR filter impulse response.  scalar</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">len = impzlength(b, a, tol)
+   returns the impulse response length for the causal discrete-time filter
+   with the transfer function coefficients for numerator and denominator in
+   a and b respectively. For stable IIR filters, len is the effective length
+   impulse response length, i.e. the length after which the response is
+   essentially zero
+   len = impzlength(sos)
+   returns the impulse response length of the filter specified by second
+   order sections matrix. sos is a Kx6 matrix, where K is the number of
+   sections. Each row of the sos matrix corresponds to a second order
+   biquad filter
+   len = impzlength(__, tol)
+   specifies a tolerance for estimating the effective impulse response
+   length in case of an IIR filter. By default, tol is 5e-5. Increasing tol
+   leads to shorter len and vice-versa</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabnumber">1</span><span class="scilabopenclose">)</span> <span class="scilabid">Low</span> <span class="scilabid">pass</span> <span class="scilabid">IIR</span> <a class="scilabmacro" href="scilab://filter">filter</a> <span class="scilabstring">with</span> <span class="scilabstring">pole</span> <span class="scilabstring">at</span> <span class="scilabstring">0.9</span>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabcomment">//Low pass IIR filter with pole at 0.9</span>
 <span class="scilabid">b</span> <span class="scilaboperator">=</span> <span class="scilabnumber">1</span><span class="scilabdefault">;</span>
 <span class="scilabid">a</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilaboperator">-</span><span class="scilabnumber">0.9</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
-<span class="scilabid">len</span> <span class="scilaboperator">=</span> <span class="scilabid">impzlength</span><span class="scilabopenclose">(</span><span class="scilabid">b</span><span class="scilabdefault">,</span><span class="scilabid">a</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+<span class="scilabid">len</span> <span class="scilaboperator">=</span> <span class="scilabid">impzlength</span><span class="scilabopenclose">(</span><span class="scilabid">b</span><span class="scilabdefault">,</span><span class="scilabid">a</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabcomment">//Expected Output :</span>
+<span class="scilabcomment">//len=93</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
 
 <div class="refsection"><h3 class="title">See also</h3>
-   <ul class="itemizedlist"><li class="member"><a href="scilab://designfilt" class="link">| digitalFilter | impz | zp2sos</a></li></ul></div>
+   <ul class="itemizedlist"><li class="member"><a href="impz.html" class="link">impz</a></li><p class="para"></p>
+   <li class="member"><a href="zp2sos.html" class="link">zp2sos</a></li><p class="para"></p></ul></div>
 
 <div class="refsection"><h3 class="title">Authors</h3>
    <ul class="itemizedlist"><li class="member">Ayush Baid</li></ul></div>

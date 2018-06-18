@@ -34,6 +34,27 @@
     <br /><br />
     <div class="refnamediv"><h1 class="refname">icceps</h1>
     <p class="refpurpose">ICCEPS computes the inverse cepstrum of a real-valued input. This spectrum</p></div>
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">inv_ceps</span><span class="default"> = </span><span class="functionid">icceps</span><span class="default">(</span><span class="default">xhat</span><span class="default">,</span><span class="default">remv_samp</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">remv_samp:</span>
+      <dd><p class="para">Number of samples of delay to be removed</p></dd></dt>
+   <dt><span class="term">xhat:</span>
+      <dd><p class="para">real valued input</p></dd></dt>
+   <dt><span class="term">inv_ceps:</span>
+      <dd><p class="para">Inverse cepstrum output</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">inv_ceps = icceps(xhat,remv_samp) returns the inverse complex cepstrum of the real data sequence &#0034;xhat&#0034;, removing &#0034;remv_samp&#0034; samples of delay. If &#0034;xhat&#0034; was obtained with cceps(x), then the amount of delay that was added to x was the element of round(unwrap(angle(fft(x)))/pi) corresponding to π radians.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">xhat</span><span class="scilaboperator">=</span><span class="scilabopenclose">[</span> <span class="scilabnumber">2.2428</span>   <span class="scilaboperator">-</span><span class="scilabnumber">0.0420</span>   <span class="scilaboperator">-</span><span class="scilabnumber">0.0210</span>    <span class="scilabnumber">0.0045</span>    <span class="scilabnumber">0.0366</span>    <span class="scilabnumber">0.0788</span>    <span class="scilabnumber">0.1386</span>    <span class="scilabnumber">0.2327</span>    <span class="scilabnumber">0.4114</span>    <span class="scilabnumber">0.9249</span><span class="scilabopenclose">]</span>
+<span class="scilabid">icc</span> <span class="scilaboperator">=</span> <span class="scilabid">icceps</span><span class="scilabopenclose">(</span><span class="scilabid">xhat</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabcommand" href="scilab://round">round</a><span class="scilabopenclose">(</span><span class="scilabid">icc</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//EXPECTED OUTPUT:</span>
+<span class="scilabcomment">//  2   3   4   5   6   7   8   9   10   1</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

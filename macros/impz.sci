@@ -11,9 +11,9 @@ function [x_r, t_r] = impz(b, a, n, fs)
 //Parameters 
 //x_r: impz chooses the number of samples and returns the response in the column vector, x_r.
 //t_r : impz returns the sample times in the column vector, t_r
-// b : numeratpor coefficients of the filter
+// b : numerator coefficients of the filter
 // a : denominator coefficients of the filter
-// n : samples of the impulse response   t(by default ,n = length(t) and  is computed automatically.)
+// n : samples of the impulse response   t(by default ,n = length(t) and  is computed automatically.
 // fs : sampling frequency
 
 //Description

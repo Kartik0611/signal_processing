@@ -34,6 +34,29 @@
     <br /><br />
     <div class="refnamediv"><h1 class="refname">helperHarmonicDistortionAmplifier</h1>
     <p class="refpurpose">helperHarmonicDistortionADC Helper function for HarmonicDistortionExample.m</p></div>
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">outputVoltage</span><span class="default">=</span><span class="functionid">helperHarmonicDistortionAmplifier</span><span class="default">(</span><span class="default">inputVoltage</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">inputVmax:</span>
+      <dd><p class="para">Maximum operating voltage times the sinusoidal signal.</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Analizing the harmonic distortion of a weakly non-linear system in the presence of noise.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">VmaxPk</span> <span class="scilaboperator">=</span> <span class="scilabnumber">2</span><span class="scilabdefault">;</span>
+<span class="scilabid">Fi</span> <span class="scilaboperator">=</span> <span class="scilabnumber">2000</span><span class="scilabdefault">;</span>
+<span class="scilabid">Fs</span> <span class="scilaboperator">=</span> <span class="scilabnumber">44.1e3</span><span class="scilabdefault">;</span> 
+<span class="scilabid">Tstop</span> <span class="scilaboperator">=</span> <span class="scilabnumber">50e-3</span><span class="scilabdefault">;</span>
+<span class="scilabid">t</span> <span class="scilaboperator">=</span> <span class="scilabnumber">0</span><span class="scilabspecial">:</span><span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabid">Fs</span><span class="scilabspecial">:</span><span class="scilabid">Tstop</span><span class="scilabdefault">;</span>
+<span class="scilabid">inputVmax</span> <span class="scilaboperator">=</span> <span class="scilabid">VmaxPk</span><span class="scilaboperator">*</span><a class="scilabcommand" href="scilab://sin">sin</a><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilaboperator">*</span><span class="scilabconstants">%pi</span><span class="scilaboperator">*</span><span class="scilabid">Fi</span><span class="scilaboperator">*</span><span class="scilabid">t</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span><span class="scilabid">z</span>
+<span class="scilabid">outputVmax</span> <span class="scilaboperator">=</span> <span class="scilabid">helperHarmonicDistortionAmplifier</span><span class="scilabopenclose">(</span><span class="scilabid">inputVmax</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabmacro" href="scilab://plot">plot</a><span class="scilabopenclose">(</span><span class="scilabid">t</span><span class="scilabdefault">,</span> <span class="scilabid">outputVmax</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span><a class="scilabmacro" href="scilab://replot">replot</a><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">0</span><span class="scilabdefault">,</span><span class="scilaboperator">-</span><span class="scilabnumber">2.5</span><span class="scilabdefault">,</span><span class="scilabnumber">0.005</span><span class="scilabdefault">,</span><span class="scilabnumber">2.5</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabmacro" href="scilab://xlabel">xlabel</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">Time</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span>
+<a class="scilabmacro" href="scilab://ylabel">ylabel</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">Output Voltage</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span>
+<a class="scilabmacro" href="scilab://title">title</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">Amplifier output</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

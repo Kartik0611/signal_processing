@@ -43,22 +43,21 @@
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">A:</span>
-    	  	<dd><p class="para">real|complex numbers - vector|matrix
-Input Array
-For complex elements, cummax compares the magnitude of elements. If the magnitude are same, phase angles are compared.</p></dd></dt>
-        <dt><span class="term">Ws:</span>
-  	        <dd><p class="para">scalar or vector of length 2, elements must be in the range [0,1]</p></dd></dt>
-        <dt><span class="term">Rp:</span>
-                <dd><p class="para">real or complex value</p></dd></dt>
-        <dt><span class="term">Rs:</span>
-                <dd><p class="para">real or complex value</p></dd></dt></dl></div>
+      <dd><p class="para">positive integer value<p class="para"></p>For complex elements, cummax compares the magnitude of elements. If the magnitude are same, phase angles are compared.</p></dd></dt>
+   <dt><span class="term">dim:</span>
+      <dd><p class="para">Dimension to operate along<p class="para"></p>If no dimension is specified, then the default value is the first array dimension whose value is greater than 1</p></dd></dt>
+   <dt><span class="term">direction:</span>
+      <dd><p class="para">Direction of cumulation<p class="para"></p>If the direction is forward, cummax works from 1 to end of the active dimension. Otherwise, it works in the opposite sense</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">The function returns the cumulative maximum elements of the input vector/array.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabnumber">1</span><span class="scilabopenclose">)</span> <span class="scilabid">Cumulative</span> <span class="scilabid">maximum</span> <span class="scilabid">values</span> <span class="scilabid">in</span> <span class="scilabid">a</span> <span class="scilabid">vector</span>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">Cumulative</span> <span class="scilabid">maximum</span> <span class="scilabid">values</span> <span class="scilabid">in</span> <span class="scilabid">a</span> <span class="scilabid">vector</span>
 <span class="scilabid">v</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">8</span> <span class="scilabnumber">9</span> <span class="scilabnumber">1</span> <span class="scilabnumber">10</span> <span class="scilabnumber">6</span> <span class="scilabnumber">1</span> <span class="scilabnumber">3</span> <span class="scilabnumber">6</span> <span class="scilabnumber">10</span> <span class="scilabnumber">10</span><span class="scilabopenclose">]</span>
 <span class="scilabid">M</span> <span class="scilaboperator">=</span> <span class="scilabid">cummax</span><span class="scilabopenclose">(</span><span class="scilabid">v</span><span class="scilabopenclose">)</span>
 
-<span class="scilabid">Expected</span> <span class="scilabid">output</span><span class="scilabspecial">:</span> <span class="scilabopenclose">[</span><span class="scilabnumber">8</span> <span class="scilabnumber">9</span> <span class="scilabnumber">9</span> <span class="scilabnumber">10</span> <span class="scilabnumber">10</span> <span class="scilabnumber">10</span> <span class="scilabnumber">10</span> <span class="scilabnumber">10</span> <span class="scilabnumber">10</span> <span class="scilabnumber">10</span><span class="scilabopenclose">]</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+<span class="scilabcomment">//Expected output: [8 9 9 10 10 10 10 10 10 10]</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
 
 <div class="refsection"><h3 class="title">Authors</h3>
    <ul class="itemizedlist"><li class="member">Ayush Baid</li></ul></div>
