@@ -10,7 +10,7 @@ function y = decimate(x, q, n, ftype)
 //x: input sequence
 //q: reduction factor
 //n : filter order
-//ftype: filte rtype : iir or fir
+//ftype: filter type : iir or fir
 
 //Description
 //this is an octave function
@@ -18,7 +18,7 @@ function y = decimate(x, q, n, ftype)
 //By default, an order n Chebyshev type I filter is used. If n is not specified, the default is 8. 
 //If the optional argument "fir" is given, an order n FIR filter is used, with a default order of 30 if n is not given. 
 //Note that q must be an integer for this rate change method. 
-
+//
 //Example :
 //t = 0:.00025:1;
 //x = sin(2*%pi*30*t) + sin(2*%pi*60*t);

@@ -12,7 +12,7 @@ function [y]=filtfilt(b,a,x)
 //	In theory, it forwards and reverse filters the signal and corrects phase distortion upto an extent by a one-pass filter but squares the magnitude response in the process. Practically though, the correction isn't perfect and magnitude response, particularly the stop band is distorted.
 // Examples
 // 1.	y=filtfilt (1,2*%i,[%i -4 0])        // Number of Output argument should be equal to 1
-//	y =   [0.00000 - 0.25000i   1.00000 + 0.00000i   0.00000 + 0.00000i]
+//	y =   [-0.25i   1   0]
 
 funcprot(0);
 rhs=argn(2);

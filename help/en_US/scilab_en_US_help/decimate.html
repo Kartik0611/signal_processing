@@ -33,7 +33,42 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">decimate</h1>
-    <p class="refpurpose">rhs = argn(2)</p></div>
+    <p class="refpurpose">Decimation — decrease sample rate by integer factor</p></div>
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">y</span><span class="default"> = </span><span class="functionid">decimate</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">q</span><span class="default">)</span>
+<span class="default">y</span><span class="default"> = </span><span class="functionid">decimate</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">q</span><span class="default">,</span><span class="default">n</span><span class="default">)</span>
+<span class="default">y</span><span class="default"> = </span><span class="functionid">decimate</span><span class="default"> (…, </span>&#0034;<span class="default">fir</span>&#0034;<span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">x:</span>
+      <dd><p class="para">input sequence</p></dd></dt>
+   <dt><span class="term">q:</span>
+      <dd><p class="para">reduction factor</p></dd></dt>
+   <dt><span class="term">n:</span>
+      <dd><p class="para">filter order</p></dd></dt>
+   <dt><span class="term">ftype:</span>
+      <dd><p class="para">filter type: iir or fir</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">y = decimate(x,q) reduces the sample rate of x, the input signal, by a factor of q.
+By default, an order n Chebyshev type I filter is used. If n is not specified, the default is 8. 
+If the optional argument &#0034;fir&#0034; is given, an order n FIR filter is used, with a default order of 30 if n is not given. 
+Note that q must be an integer for this rate change method.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">t</span> <span class="scilaboperator">=</span> <span class="scilabnumber">0</span><span class="scilabspecial">:</span><span class="scilabnumber">.00025</span><span class="scilabspecial">:</span><span class="scilabnumber">1</span><span class="scilabdefault">;</span>
+<span class="scilabid">x</span> <span class="scilaboperator">=</span> <a class="scilabcommand" href="scilab://sin">sin</a><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilaboperator">*</span><span class="scilabconstants">%pi</span><span class="scilaboperator">*</span><span class="scilabnumber">30</span><span class="scilaboperator">*</span><span class="scilabid">t</span><span class="scilabopenclose">)</span> <span class="scilaboperator">+</span> <a class="scilabcommand" href="scilab://sin">sin</a><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilaboperator">*</span><span class="scilabconstants">%pi</span><span class="scilaboperator">*</span><span class="scilabnumber">60</span><span class="scilaboperator">*</span><span class="scilabid">t</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">y</span> <span class="scilaboperator">=</span> <span class="scilabid">decimate</span><span class="scilabopenclose">(</span><span class="scilabid">x</span><span class="scilabdefault">,</span><span class="scilabnumber">4</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabmacro" href="scilab://subplot">subplot</a><span class="scilabopenclose">(</span><span class="scilabnumber">211</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabcommand" href="scilab://plot2d3">plot2d3</a><span class="scilabopenclose">(</span><span class="scilabopenclose">(</span><span class="scilabnumber">0</span><span class="scilabspecial">:</span><span class="scilabnumber">120</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><span class="scilabid">x</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabspecial">:</span><span class="scilabnumber">121</span><span class="scilabopenclose">)</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabmacro" href="scilab://subplot">subplot</a><span class="scilabopenclose">(</span><span class="scilabnumber">212</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabcommand" href="scilab://plot2d3">plot2d3</a><span class="scilabopenclose">(</span><span class="scilabopenclose">(</span><span class="scilabnumber">0</span><span class="scilabspecial">:</span><span class="scilabnumber">30</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><span class="scilabid">y</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabspecial">:</span><span class="scilabnumber">31</span><span class="scilabopenclose">)</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Ayush Baid</li></ul></div>
     <br />
 
     <div class="manualnavbar">

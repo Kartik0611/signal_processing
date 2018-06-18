@@ -33,7 +33,7 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">filtic</h1>
-    <p class="refpurpose"></p></div>
+    <p class="refpurpose">This function finds the initial conditions for the delays in the transposed direct-form II filter implementation</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
@@ -55,12 +55,12 @@
 The vectors b and a represent the numerator and denominator coefficients of the filter&#0039;s transfer function.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">filtic</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabid">i</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilaboperator">-</span><span class="scilabid">i</span><span class="scilabdefault">,</span><span class="scilabnumber">5</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabid">i</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.8</span><span class="scilabid">i</span><span class="scilabdefault">,</span><span class="scilabnumber">7</span><span class="scilabdefault">,</span><span class="scilabnumber">9</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
-<span class="scilabid">ans</span> <span class="scilaboperator">=</span>
-<span class="scilabnumber">0.00000</span> <span class="scilaboperator">-</span> <span class="scilabnumber">22.60000</span><span class="scilabid">i</span>
-<span class="scilabnumber">2.40000</span> <span class="scilaboperator">+</span>  <span class="scilabnumber">0.00000</span><span class="scilabid">i</span>
-<span class="scilabnumber">0.00000</span> <span class="scilaboperator">+</span>  <span class="scilabnumber">0.00000</span><span class="scilabid">i</span>
-<span class="scilabid">This</span> <span class="scilabfkeyword">function</span> <span class="scilabid">being</span> <span class="scilabid">called</span> <span class="scilabid">from</span> <span class="scilabid">Octave</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">filtic</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabconstants">%i</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilaboperator">-</span><span class="scilabconstants">%i</span><span class="scilabdefault">,</span><span class="scilabnumber">5</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilaboperator">*</span><span class="scilabconstants">%i</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.8</span><span class="scilaboperator">*</span><span class="scilabconstants">%i</span><span class="scilabdefault">,</span><span class="scilabnumber">7</span><span class="scilabdefault">,</span><span class="scilabnumber">9</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//Expected Output:</span>
+<span class="scilabcomment">//ans =</span>
+<span class="scilabcomment">//-22.6i</span>
+<span class="scilabcomment">// 2.4</span>
+<span class="scilabcomment">// 0</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

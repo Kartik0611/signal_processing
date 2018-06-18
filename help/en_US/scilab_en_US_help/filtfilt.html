@@ -33,7 +33,7 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">filtfilt</h1>
-    <p class="refpurpose"></p></div>
+    <p class="refpurpose">Zero phase digital filtering</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
@@ -52,8 +52,9 @@
 In theory, it forwards and reverse filters the signal and corrects phase distortion upto an extent by a one-pass filter but squares the magnitude response in the process. Practically though, the correction isn&#0039;t perfect and magnitude response, particularly the stop band is distorted.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabnumber">1.</span>    <span class="scilabopenclose">[</span><span class="scilabid">a</span><span class="scilabdefault">,</span><span class="scilabid">b</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">filtfilt</span> <span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabid">i</span><span class="scilabdefault">,</span><span class="scilabopenclose">[</span><span class="scilabid">i</span> <span class="scilaboperator">-</span><span class="scilabnumber">4</span> <span class="scilabnumber">0</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
-<span class="scilabid">a</span> <span class="scilaboperator">=</span>   <span class="scilabopenclose">[</span><span class="scilabnumber">0.00000</span> <span class="scilaboperator">-</span> <span class="scilabnumber">0.25000</span><span class="scilabid">i</span>   <span class="scilabnumber">1.00000</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.00000</span><span class="scilabid">i</span>   <span class="scilabnumber">0.00000</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.00000</span><span class="scilabid">i</span><span class="scilabopenclose">]</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabnumber">1.</span>    <span class="scilabopenclose">[</span><span class="scilabid">a</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">filtfilt</span> <span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabid">i</span><span class="scilabdefault">,</span><span class="scilabopenclose">[</span><span class="scilabid">i</span> <span class="scilaboperator">-</span><span class="scilabnumber">4</span> <span class="scilabnumber">0</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//Expected output</span>
+<span class="scilabcomment">//a =   [-0.25i   1   0]</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

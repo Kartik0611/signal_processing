@@ -13,10 +13,10 @@ function M = cummax(varargin)
     //      direction specifies as the direction of operation
     //
     // Parameters
-    // A - real|complex numbers - vector|matrix
-    //     Input Array
-    //     For complex elements, cummax compares the magnitude of elements. If
-    //     the magnitude are same, phase angles are compared.
+//     A - real|complex numbers - vector|matrix
+//         Input Array
+//         For complex elements, cummax compares the magnitude of elements. If
+//         the magnitude are same, phase angles are compared.
     // dim - positive integer - scalar  
     //     Dimension to operate along
     //     If no dimension is specified, then the default value is the first 

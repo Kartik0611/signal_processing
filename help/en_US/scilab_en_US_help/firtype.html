@@ -33,7 +33,25 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">firtype</h1>
-    <p class="refpurpose">if (type(b)~=1) then</p></div>
+    <p class="refpurpose">This function identifies Type of linear phase FIR filter</p></div>
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">t</span><span class="default">=</span><span class="functionid">firtype</span><span class="default">(</span><span class="default">b</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">t:</span>
+      <dd><p class="para">type of an FIR filter</p></dd></dt>
+   <dt><span class="term">b:</span>
+      <dd><p class="para">Filter coefficients</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">&#0034;t = firtype(b)&#0034; determines the type, t, of an FIR filter with      coefficients b.</p><p class="para">&#0034;t&#0034; can be 1, 2, 3, or 4.</p><p class="para">The filter must be real and have linear phase.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">b</span><span class="scilaboperator">=</span><span class="scilabopenclose">[</span><span class="scilabnumber">9.2762e-05</span>   <span class="scilabnumber">9.5482e-02</span>   <span class="scilabnumber">4.0443e-01</span>   <span class="scilabnumber">4.0443e-01</span>   <span class="scilabnumber">9.5482e-02</span>   <span class="scilabnumber">9.2762e-05</span><span class="scilabopenclose">]</span>
+<span class="scilabid">firtype</span><span class="scilabopenclose">(</span><span class="scilabid">b</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//Expected Output</span>
+<span class="scilabcomment">//2</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">
