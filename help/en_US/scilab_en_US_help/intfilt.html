@@ -33,7 +33,35 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">intfilt</h1>
-    <p class="refpurpose"></p></div>
+    <p class="refpurpose">The &#0034;intfilt&#0034; function estimate Interpolated FIR Filter Design</p></div>
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">h</span><span class="default">=</span><span class="functionid">intfilt</span><span class="default">(</span><span class="default">R</span><span class="default">,</span><span class="default">L</span><span class="default">,</span><span class="default">freqmult</span><span class="default">)</span>
+<span class="default">[</span><span class="default">h</span> <span class="default">a</span><span class="default">]=</span><span class="functionid">intfilt</span><span class="default">(</span><span class="default">R</span><span class="default">,</span><span class="default">L</span><span class="default">,</span><span class="default">freqmult</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>  
+   <dl><dt><span class="term">R:</span>
+      <dd><p class="para">Samples.   It should be numeric</p></dd></dt>
+   <dt><span class="term">L:</span>
+      <dd><p class="para">bandlimited interpolation samples. It must be nonzero.</p></dd></dt>
+   <dt><span class="term">freqmult:</span>
+      <dd><p class="para">bandlimitedness of ALPHA times the Nyquist frequency. It can be numeric or character (&#0039;B&#0039; or &#0039;L&#0039;, B is length (N+1)*L-1 for N odd and (N+1)*L for N even)</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">&#0034;h=intfilt(R,L,freqmult)&#0034; designs a linear phase FIR filter. This function does ideal bandlimited interpolation using the nearest 2*L nonzero samples, when used on a sequence inserted with l-1 consecutive zeros between every l samples. It assumes an original bandlimitedness of &#0034;freqmult&#0034; times the Nyquist frequency.</p></div>
+
+<div class="refsection"><h3 class="title">Example 1</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">h1</span><span class="scilaboperator">=</span><span class="scilabid">intfilt</span><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><span class="scilabstring">&#0039;</span><span class="scilabstring">l</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabcomment">//EXPECTED OUTPUT :</span>
+<span class="scilabcomment">// -0.0625    0.    0.5625    1.    0.5625    0.  -0.0625</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Example 2</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">h1</span><span class="scilaboperator">=</span><span class="scilabid">intfilt</span><span class="scilabopenclose">(</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabcomment">//EXPECTED OUTPUT :</span>
+<span class="scilabcomment">// 0.3001054    0.6366198    0.9003163    1.    0.9003163    0.6366198    0.3001054</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Jitendra Singh</li></ul></div>
     <br />
 
     <div class="manualnavbar">

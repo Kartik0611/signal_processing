@@ -68,7 +68,7 @@ end
     
      //typ(1)=='b' | typ(1)=='B'
      
-         if convstr(typ(1), 'u') =='B' then
+         if convstr(type(1), 'u') =='B' then
                    n=2*R*L-1;
                    
                  

@@ -46,21 +46,26 @@
       <dd><p class="para">output reflection coefficients  corresponding to the reflection coefficients in input</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This function returns a vector of reflection coefficients from a vector of inverse sine parameters
-output array has k(i) = sin(pi/2*isin(i))</p>
-   <p class="para">Example
-k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
-isin = rc2is(k)      //Gives inverse sine parameters
-k_dash = is2rc(isin)</p>
+   <p class="para">This function returns a vector of reflection coefficients from a vector of inverse sine parameters.<p class="para"></p>output array has k(i) = sin(pi/2*isin(i))</p>
    <p class="para"></p></div>
+
+<div class="refsection"><h3 class="title">Example 1</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">k</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.3090</span> <span class="scilabnumber">0.9801</span> <span class="scilabnumber">0.0031</span> <span class="scilabnumber">0.0082</span> <span class="scilaboperator">-</span><span class="scilabnumber">0.0082</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">isin</span> <span class="scilaboperator">=</span> <span class="scilabid">rc2is</span><span class="scilabopenclose">(</span><span class="scilabid">k</span><span class="scilabopenclose">)</span>      <span class="scilabcomment">//Gives inverse sine parameters</span>
+<span class="scilabid">k_dash</span> <span class="scilaboperator">=</span> <span class="scilabid">is2rc</span><span class="scilabopenclose">(</span><span class="scilabid">isin</span><span class="scilabopenclose">)</span>
+
+<span class="scilabcomment">// EXPECTED OUTPUT :</span>
+<span class="scilabcomment">//isin    =   [0.1999886    0.8727832    0.0019735   0.0052203 -0.0052203 ]</span>
+<span class="scilabcomment">//k_dash =[0.309    0.9801    0.0031    0.0082  - 0.0082]</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
 
 <div class="refsection"><h3 class="title">See also</h3>
    <ul class="itemizedlist"><li class="member"><a href="rc2is.html" class="link">rc2is</a></li>
    <li class="member"><a href="rc2poly.html" class="link">rc2poly</a></li>
    <li class="member"><a href="rc2ac.html" class="link">rc2ac</a></li>
-   <li class="member"><a href="rc2lar.html" class="link">rc2lar</a></li>
-   <li class="member"><a href="scilab://Author" class="link">Author</a></li>
-   <li class="member"><a href="scilab://Parthe" class="link">Pandit</a></li></ul></div>
+   <li class="member"><a href="rc2lar.html" class="link">rc2lar</a></li></ul></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Parthe Pandit</li></ul></div>
 
 <div class="refsection"><h3 class="title">Bibliography</h3>
    <p class="para">J.R. Deller, J.G. Proakis, J.H.L. Hansen, &#0034;Discrete-Time Processing of Speech Signals&#0034;, Prentice Hall, Section 7.4.5</p></div>

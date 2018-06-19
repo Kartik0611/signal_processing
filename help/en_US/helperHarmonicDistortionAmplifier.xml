@@ -60,4 +60,11 @@ title('Amplifier output')
    ]]></programlisting>
 </refsection>
 
+<image>
+<src>help/1_decimate.png</src>
+<height units="pixels"> 500</height>
+<width units="pixels"> 800</width>
+<title> Title of image</title>
+</image>
+
 </refentry>

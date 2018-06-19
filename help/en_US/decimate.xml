@@ -49,7 +49,7 @@
 y = decimate(x,q) reduces the sample rate of x, the input signal, by a factor of q.
 By default, an order n Chebyshev type I filter is used. If n is not specified, the default is 8. 
 If the optional argument "fir" is given, an order n FIR filter is used, with a default order of 30 if n is not given. 
-Note that q must be an integer for this rate change method. 
+Note that q must be an integer for this rate change method.
 </para>
 </refsection>
 
@@ -65,7 +65,6 @@ subplot(212);
 plot2d3((0:30),y(1:31));
    ]]></programlisting>
 </refsection>
-
 
 
 <refsection>

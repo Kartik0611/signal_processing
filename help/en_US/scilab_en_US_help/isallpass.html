@@ -33,7 +33,47 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">isallpass</h1>
-    <p class="refpurpose">[nargout,nargin]=argn();</p></div>
+    <p class="refpurpose">Determines whether the filter is allpass or not</p></div>
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">flag</span><span class="default"> = </span><span class="functionid">isallpass</span><span class="default">(</span><span class="default">b</span><span class="default">,</span><span class="default">a</span><span class="default">)</span>
+<span class="default">flag</span><span class="default"> = </span><span class="functionid">isallpass</span><span class="default">(</span><span class="default">sos</span><span class="default">)</span>
+<span class="default">flag</span><span class="default"> = </span><span class="functionid">isallpass</span><span class="default">(...,</span><span class="default">tol</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">b:</span>
+      <dd><p class="para">vector containing zero coefficients of the transfer function</p></dd></dt>
+   <dt><span class="term">a:</span>
+      <dd><p class="para">vector containing pole coefficients of the transfer functtion</p></dd></dt>
+   <dt><span class="term">sos:</span>
+      <dd><p class="para">Second order estimates.  real|complex - matrix (K-by-6)</p></dd></dt>
+   <dt><span class="term">tol:</span>
+      <dd><p class="para">tolerance is used to determine when two numbers are close enough to be considered equal.  scalar</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">flag = isallpass(b,a) returns a logical output that is either 1 or 0 depending on output parameter &#0034;flag&#0034; by the filter specified by numerator coefficients, b, and denominator coefficients, a, is an allpass filter or not. If the filter is not an allpass filter, flag is equal to false.<p class="para"></p>flag = isallpass(sos) returns true if the filter specified by second order sections matrix ie sos, is an allpass filter.<p class="para"></p> sos is a K-by-6 matrix, where the number of sections, K, must be greater than or equal to 2. Each row of sos corresponds to the coefficients of a second order (biquad) filter. The ith row of the sos matrix corresponds to [bi(1) bi(2) bi(3) ai(1) ai(2) ai(3)].</p></div>
+
+<div class="refsection"><h3 class="title">Example 1</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">k</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabnumber">2</span> <span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabnumber">3</span> <span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabnumber">4</span> <span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabnumber">5</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">b</span><span class="scilabdefault">,</span><span class="scilabid">a</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">latc2tf</span><span class="scilabopenclose">(</span><span class="scilabid">k</span><span class="scilabdefault">,</span><span class="scilabstring">&#0039;</span><span class="scilabstring">allpass</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">flag_isallpass</span> <span class="scilaboperator">=</span> <span class="scilabid">isallpass</span><span class="scilabopenclose">(</span><span class="scilabid">b</span><span class="scilabdefault">,</span><span class="scilabid">a</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//Expected Output</span>
+<span class="scilabcomment">//flag_isallpass  =1</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Example 2</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">b</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabnumber">3</span> <span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabnumber">4</span> <span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabnumber">5</span> <span class="scilabnumber">1</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">a</span><span class="scilaboperator">=</span><span class="scilabid">b</span><span class="scilabopenclose">(</span><span class="scilabspecial">$</span><span class="scilabspecial">:</span><span class="scilaboperator">-</span><span class="scilabnumber">1</span><span class="scilabspecial">:</span><span class="scilabnumber">1</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">flag</span> <span class="scilaboperator">=</span> <span class="scilabid">isallpass</span><span class="scilabopenclose">(</span><span class="scilabid">b</span><span class="scilabdefault">,</span><span class="scilabid">a</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//Expected Output</span>
+<span class="scilabcomment">//flag = 1</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Example 3</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">flag</span> <span class="scilaboperator">=</span> <span class="scilabid">isallpass</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilabnumber">1</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//Expected Output</span>
+<span class="scilabcomment">//flag = 0</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Parthasarathi Panda</li></ul></div>
     <br />
 
     <div class="manualnavbar">
