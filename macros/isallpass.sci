@@ -18,6 +18,7 @@ function isall=isallpass(varargin)
 //OUTPUT :
 //              flag_isallpass  =1
 
+
 //b = [1/3 1/4 1/5 1];
 //a=b($:-1:1);
 //flag = isallpass(b,a)
@@ -25,6 +26,11 @@ function isall=isallpass(varargin)
 //OUTPUT
 //              flag=1
 
+
+//fl=isallpass(1,[1 1])
+//
+//OUTPUT
+//              fl=0
     [nargout,nargin]=argn();
     if (nargin==2) then
         v=size(varargin(1));

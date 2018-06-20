@@ -1,4 +1,4 @@
-
+exec ("/home/kartikhegde/Downloads/FOSSEE_Scilab_Octave_Interface_Toolbox/loader.sce")
 exec("loader.sce")
 exec("builder.sce")
 
@@ -28,19 +28,19 @@ end
 
 /////////Test case for       2) buttord                  //////////
 
-//Wp = 40/500;
-//Ws = 150/500;
-//
-//[n, Wn] = buttord(Wp, Ws, 3, 60);
-//Wn=roundn(Wn,7)
-//
-//if(Wn==0.0800376  &  n==5)
-//           test_pass=[test_pass,1]
-//else
-//	test_pass=[test_pass,0]
-//	disp("buttord Test failed")
-//end
-//
+Wp = 40/500;
+Ws = 150/500;
+
+[n, Wn] = buttord(Wp, Ws, 3, 60);
+Wn=roundn(Wn,7)
+
+if(Wn==0.0800376  &  n==5)
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("buttord Test failed")
+end
+
 //
 ///////////////////////////////////////////////
 //
@@ -332,8 +332,8 @@ res=find(test_pass==0)
 
 if(res~=[])
 	disp("One or more tests failed")
-	exit(1)
+	//exit(1)
 else
     disp("pass")
-	exit
+	//exit
 end
