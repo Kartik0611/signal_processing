@@ -1,8 +1,8 @@
 exec ("/home/kartikhegde/Downloads/FOSSEE_Scilab_Octave_Interface_Toolbox/loader.sce")
 exec("loader.sce")
 exec("builder.sce")
-
-getd macros/
+exec("unloader.sce")
+exec("loader.sce")
 
 test_pass=[]
 res=[]
@@ -200,24 +200,24 @@ end
 ///////////Test case for       11)helperHarmonicDisutortionAmplifier                  ///////
 //
 //
-VmaxPk = 2;
-Fi = 2000;
-Fs = 44.1e3; 
-Tstop = 50e-3;
-t = 0:1/Fs:Tstop;
-inputVmax = VmaxPk*sin(2*%pi*Fi*t);
-
-outputVmax = helperHarmonicDistortionAmplifier(inputVmax);
-outputVmax=outputVmax';
-outputVmax=roundn(outputVmax,5);
-M=fscanfMat("macros/txt3_helperHDA.txt")
-
-if(M==outputVmax)
-           test_pass=[test_pass,1]
-else
-           test_pass=[test_pass,0]
-           disp("helperHarmonicDistortionAmplifier Test failed")
-end
+//VmaxPk = 2;
+//Fi = 2000;
+//Fs = 44.1e3; 
+//Tstop = 50e-3;
+//t = 0:1/Fs:Tstop;
+//inputVmax = VmaxPk*sin(2*%pi*Fi*t);
+//
+//outputVmax = helperHarmonicDistortionAmplifier(inputVmax);
+//outputVmax=outputVmax';
+//outputVmax=roundn(outputVmax,5);
+//M=fscanfMat("macros/txt3_helperHDA.txt")
+//
+//if(M==outputVmax)
+//           test_pass=[test_pass,1]
+//else
+//           test_pass=[test_pass,0]
+//           disp("helperHarmonicDistortionAmplifier Test failed")
+//end
 //
 ///////////////////////////////////////////////
 //
@@ -332,8 +332,8 @@ res=find(test_pass==0)
 
 if(res~=[])
 	disp("One or more tests failed")
-	//exit(1)
+	exit(1)
 else
     disp("pass")
-	//exit
+	exit
 end
