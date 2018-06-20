@@ -51,13 +51,15 @@ Fi = 2000;
 Fs = 44.1e3; 
 Tstop = 50e-3;
 t = 0:1/Fs:Tstop;
-inputVmax = VmaxPk*sin(2*%pi*Fi*t);z
+inputVmax = VmaxPk*sin(2*%pi*Fi*t);
 outputVmax = helperHarmonicDistortionAmplifier(inputVmax);
-plot(t, outputVmax);replot([0,-2.5,0.005,2.5]);
+plot(t, outputVmax)
+replot([0,-2.5,0.005,2.5])
 xlabel('Time')
 ylabel('Output Voltage')
 title('Amplifier output')
    ]]></programlisting>
+   
 </refsection>
 
 </refentry>
