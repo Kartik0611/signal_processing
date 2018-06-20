@@ -59,12 +59,20 @@ Note that q must be an integer for this rate change method.
 t = 0:.00025:1;
 x = sin(2*%pi*30*t) + sin(2*%pi*60*t);
 y = decimate(x,4);
-subplot(211);
-plot2d3((0:120),x(1:121));
-subplot(212);
-plot2d3((0:30),y(1:31));
+subplot(211)
+plot2d3((0:120),x(1:121))
+subplot(212)
+plot2d3((0:30),y(1:31))
    ]]></programlisting>
-   	
+   	<scilab:image>
+   	t = 0:.00025:1;
+	x = sin(2*%pi*30*t) + sin(2*%pi*60*t);
+	y = decimate(x,4);
+	subplot(211)
+	plot2d3((0:120),x(1:121))
+	subplot(212)
+	plot2d3((0:30),y(1:31))
+	</scilab:image>
 </refsection>
 
 
