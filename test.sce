@@ -1,4 +1,4 @@
-exec ("FOSSEE_Scilab_Octave_Interface_Toolbox/loader.sce")
+exec ("/home/kartikhegde/Downloads/FOSSEE_Scilab_Octave_Interface_Toolbox/loader.sce")
 exec("loader.sce")
 exec("builder.sce")
 exec("unloader.sce")
@@ -34,7 +34,7 @@ Ws = 150/500;
 [n, Wn] = buttord(Wp, Ws, 3, 60);
 Wn=roundn(Wn,7)
 
-if(Wn==0.0800376  &  n==6)
+if(Wn==0.0800376  &  n==5)
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
@@ -207,7 +207,7 @@ Tstop = 50e-3;
 t = 0:1/Fs:Tstop;
 inputVmax = VmaxPk*sin(2*%pi*Fi*t);
 
-outputVmax = helperHarmonicDistortionAmplifier(inputVmax);
+outputVmax = helperHarmonicDistortion(inputVmax);
 outputVmax=outputVmax';
 outputVmax=roundn(outputVmax,5);
 M=fscanfMat("macros/txt3_helperHDA.txt")
