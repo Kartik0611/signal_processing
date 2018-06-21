@@ -1,4 +1,4 @@
-function outputVoltage = helperHarmonicDistortionAmplifier(inputVoltage)
+function outputVoltage = helperHarmonicDistortion(inputVoltage)
 //helperHarmonicDistortionADC Helper function for HarmonicDistortionExample.m
 
 //Calling Sequence
