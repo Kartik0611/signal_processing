@@ -111,7 +111,7 @@
 <!ENTITY a2647e77c5d477ec8d2d23f193c231fcd SYSTEM "/home/kartikhegde/Downloads/Fossee_Signal_processing-toolbox/help/en_US/hamming.xml">
 <!ENTITY aa063703eb2218b8cff94bd6cddf6f16a SYSTEM "/home/kartikhegde/Downloads/Fossee_Signal_processing-toolbox/help/en_US/hann.xml">
 <!ENTITY a0a0ac004e336fa4028048450b436082c SYSTEM "/home/kartikhegde/Downloads/Fossee_Signal_processing-toolbox/help/en_US/hanning.xml">
-<!ENTITY a7fc9d8e55d8f561be9da684e79275b7f SYSTEM "/home/kartikhegde/Downloads/Fossee_Signal_processing-toolbox/help/en_US/helperHarmonicDistortionAmplifier.xml">
+<!ENTITY ac35e9338548b2adab1a6122dc4b9e6d7 SYSTEM "/home/kartikhegde/Downloads/Fossee_Signal_processing-toolbox/help/en_US/helperHarmonicDistortion.xml">
 <!ENTITY a17faf91d1488679498622d1dcb5c4c7b SYSTEM "/home/kartikhegde/Downloads/Fossee_Signal_processing-toolbox/help/en_US/hilbert1.xml">
 <!ENTITY a7f4c0561d187178d563d9174e4cd2e02 SYSTEM "/home/kartikhegde/Downloads/Fossee_Signal_processing-toolbox/help/en_US/hurst.xml">
 <!ENTITY aba0367a697b3035bb7abc3fba57a293b SYSTEM "/home/kartikhegde/Downloads/Fossee_Signal_processing-toolbox/help/en_US/icceps.xml">
@@ -407,7 +407,7 @@
 &a2647e77c5d477ec8d2d23f193c231fcd;
 &aa063703eb2218b8cff94bd6cddf6f16a;
 &a0a0ac004e336fa4028048450b436082c;
-&a7fc9d8e55d8f561be9da684e79275b7f;
+&ac35e9338548b2adab1a6122dc4b9e6d7;
 &a17faf91d1488679498622d1dcb5c4c7b;
 &a7f4c0561d187178d563d9174e4cd2e02;
 &aba0367a697b3035bb7abc3fba57a293b;

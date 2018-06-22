@@ -55,10 +55,6 @@ This function returns a vector of reflection coefficients from a vector of inver
  k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
  isin = rc2is(k)      //Gives inverse sine parameters
  k_dash = is2rc(isin)
-<<<<<<< HEAD
-=======
-
->>>>>>> 9788ed79f646630209e24145a621f9512ab4301d
 // EXPECTED OUTPUT :
 //isin    =   [0.1999886    0.8727832    0.0019735   0.0052203 -0.0052203 ]
 //k_dash =[0.309    0.9801    0.0031    0.0082  - 0.0082]
