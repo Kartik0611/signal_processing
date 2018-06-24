@@ -1,4 +1,4 @@
-function c = blackmanharris (m, opt)
+function w = blackmanharris (m, opt)
     
  funcprot(0);
     rhs= argn(2);
