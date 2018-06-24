@@ -1,4 +1,4 @@
-function w = bohmanwin (m, opt)
+function w = bohmanwin (m)
     
  funcprot(0);
     rhs= argn(2);
