@@ -19,14 +19,16 @@ function w = gausswin (m, a)
 //    0.2493522  
  
 funcprot(0);
-rhs = argn(2)
-if(rhs<1 | rhs>2)
-error("Wrong number of input arguments.")
-end
-if(rhs==1)
-w = callOctave("gausswin",m)
-elseif(rhs==2)
-w = callOctave("gausswin",m,a)
-end
-endfunction
+[nargout,nargin]=argn();
 
+  if (nargin < 1 | nargin > 2)
+    error("wrong no. of input arguments");
+  elseif (~ (isscalar (m) & (m == fix (m)) & (m > 0)))
+    error ("gausswin: M must be a positive integer");
+  elseif (nargin == 1)
+    a = 2.5;
+  end
+
+  w = exp ( -0.5 * ( a/m * [ -(m-1) : 2 : m-1 ]' ) .^ 2 );
+
+endfunction
