@@ -8,7 +8,7 @@ function w = boxcar (m)
   end
 
   if (~ (isscalar (m) & (m == fix (m)) & (m > 0)))
-    error ("blackmanharris: M must be a positive integer");
+    error ("boxcar: M must be a positive integer");
   end
   
   w=ones(m,1);

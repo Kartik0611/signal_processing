@@ -8,7 +8,7 @@ function w = bohmanwin (m)
   end
 
   if (~ (isscalar (m) & (m == fix (m)) & (m > 0)))
-    error ("blackmanharris: M must be a positive integer");
+    error ("bohmanwin: M must be a positive integer");
   end
   
   if (m == 1)
