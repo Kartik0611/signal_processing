@@ -39,3 +39,5 @@ function w = chebwin (m, at)
       w = [w(M:-1:2) w(2:M)]';
     end
   end
+
+endfunction
