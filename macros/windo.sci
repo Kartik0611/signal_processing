@@ -1,15 +1,15 @@
-function [w] = window (f, m, varargin)
+function w_out = windo (f, m, varargin)
 //This function creates an m-point window from the function f given as input.
 //Calling Sequence
 //w = window(f, m)
 //w = window(f, m, opts)
 //Parameters 
-//f: string value
+//f: string value/window name
 //m: positive integer value
 //opts: string value, takes in "periodic" or "symmetric"
 //w: output variable, vector of real numbers
 //Description
-//This is an Octave function.
+
 //This function creates an m-point window from the function f given as input, in the output vector w.
 //f can take any valid function as a string, for example "blackmanharris".
 //Examples
@@ -22,14 +22,24 @@ function [w] = window (f, m, varargin)
 //    0.  
 funcprot(0);
 rhs = argn(2)
-if(rhs<2)
-error("Wrong number of input arguments.")
+lhs = argn(1)
+
+if(f=="bartlett" | f=="blackman" | f=="blackmanharris"  | f=="bohmanwin" | f=="boxcar" |...
+    f=="barthannwin" | f=="chebwin"| f=="flattopwin" | f=="gausswin" | f=="hamming" |...
+    f=="hanning" | f=="hann" | f=="kaiser" | f=="parzenwin" | f=="triang")
+    if(rhs<2)
+        error("Wrong number of input arguments.")
+    else
+        c =evstr (f);
+        w=c(m, varargin(:))
+        if (lhs > 0)
+            w_out = w;
+        end
+    end
+
+else
+    error("Use proper Window name")
 end
-	select(rhs)
-	case 2 then
-	[w] = callOctave("window",f,m)
-	case 3 then
-	[w] = callOctave("window",f,m,varargin(1))
-	end
+
 endfunction
 
