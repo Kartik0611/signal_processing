@@ -36,18 +36,18 @@ function b = fir2(n, f, m, grid_n, ramp_n, window_name)
   if isempty(window_name) then
        window_out=hamming(n+1); 
   end
-//  if  type((window_name)==10)
-//      if(window_name=="bartlett" | window_name=="blackman" | window_name=="blackmanharris"  |...
-//           window_name=="bohmanwin" | window_name=="boxcar" | window_name=="barthannwin" |...
-//           window_name=="chebwin"| window_name=="flattopwin" | window_name=="gausswin" |...
-//           window_name=="hamming" | window_name=="hanning" | window_name=="hann" |...
-//           window_name=="kaiser" | window_name=="parzenwin" | window_name=="triang")
-//                 c =evstr (window_name); 
-//                 window_out=c(n+1); 
-//      else
-//          error("Use proper Window name")
-//      end
-//  end
+  if  type((window_name)==10)
+      if(window_name=="bartlett" | window_name=="blackman" | window_name=="blackmanharris"  |...
+           window_name=="bohmanwin" | window_name=="boxcar" | window_name=="barthannwin" |...
+           window_name=="chebwin"| window_name=="flattopwin" | window_name=="gausswin" |...
+           window_name=="hamming" | window_name=="hanning" | window_name=="hann" |...
+           window_name=="kaiser" | window_name=="parzenwin" | window_name=="triang")
+                 c =evstr (window_name); 
+                 window_out=c(n+1); 
+      else
+          error("Use proper Window name")
+      end
+  end
   if length(window_out) ~= n+1 then
        error ("fir2: window_name must be of length n+1");
    end
