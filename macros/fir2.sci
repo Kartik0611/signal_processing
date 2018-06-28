@@ -1,4 +1,4 @@
-function b = fir2(n, f, m, grid_n, ramp_n, window_name)
+function b = fir2(n, f, m, grid_n, ramp_n, window_in)
     
  funcprot(0);
     rhs= argn(2);
@@ -6,7 +6,7 @@ function b = fir2(n, f, m, grid_n, ramp_n, window_name)
     if rhs < 3 | rhs > 6
         error("Wrong Number of input arguments");
     end
-    disp(window_name)
+
 //verify frequency and magnitude vectors are reasonable
 
   t = length(f);
@@ -31,25 +31,27 @@ function b = fir2(n, f, m, grid_n, ramp_n, window_name)
        w=ramp_n; ramp_n=[];
   end
   if rhs < 6 then
-       window_name=w; 
+       window_in=w; 
   end
-  if isempty(window_name) then
+
+  if isempty(window_in) then
        window_out=hamming(n+1); 
+  elseif(isvector(window_in) & length(window_in) == n+1)
+      window_out=window_in;
+  elseif  type((window_in)==10)
+      if(window_in=="bartlett" | window_in=="blackman" | window_in=="blackmanharris"  |...
+          window_in=="bohmanwin" | window_in=="boxcar" | window_in=="barthannwin" |...
+          window_in=="chebwin"| window_in=="flattopwin" | window_in=="gausswin" |...
+          window_in=="hamming" | window_in=="hanning" | window_in=="hann" |...
+          window_in=="kaiser" | window_in=="parzenwin" | window_in=="triang")
+          c =evstr (window_in); 
+          window_out=c(n+1); 
+      else
+          error("Use proper Window name")
+      end
   end
-//  if  type((window_name)==10)
-//      if(window_name=="bartlett" | window_name=="blackman" | window_name=="blackmanharris"  |...
-//           window_name=="bohmanwin" | window_name=="boxcar" | window_name=="barthannwin" |...
-//           window_name=="chebwin"| window_name=="flattopwin" | window_name=="gausswin" |...
-//           window_name=="hamming" | window_name=="hanning" | window_name=="hann" |...
-//           window_name=="kaiser" | window_name=="parzenwin" | window_name=="triang")
-//                 c =evstr (window_name); 
-//                 window_out=c(n+1); 
-//      else
-//          error("Use proper Window name")
-//      end
-//  end
-  if length(window_out) ~= n+1 then
-       error ("fir2: window_name must be of length n+1");
+  if(length(window_out) ~= n+1)
+      error ("fir2: window_in must be of length n+1");
    end
    
 //Default grid size is 512... unless n+1 >= 1024
@@ -89,22 +91,28 @@ function b = fir2(n, f, m, grid_n, ramp_n, window_name)
     f = unique([f(:);basef_idx(:)]');
     
 //preserve window shape even though f may have changed
-    m = interp1(basef, basem, f);
+    m = interp1(basef, basem, f,'nearest');
   end
 
 //interpolate between grid points
-  grid = interp1(f,m,linspace(0,1,grid_n+1)');
+  grid = interp1(f,m,linspace(0,1,grid_n+1)','nearest');
   
 //Transform frequency response into time response and
 //center the response about n/2, truncating the excess
   if (modulo(n,2) == 0)
     b = ifft([grid ; grid(grid_n:-1:2)]);
     mid = (n+1)/2;
-    b = real ([ b([end-floor(mid)+1:end]) ; b(1:ceil(mid)) ]);
+    b = real ([ b([$-floor(mid)+1:$]) ; b(1:ceil(mid)) ]);
   else
     //Add zeros to interpolate by 2, then pick the odd values below.
     b = ifft([grid ; zeros(grid_n*2,1) ;grid(grid_n:-1:2)]);
-    b = 2 * real([ b([end-n+1:2:end]) ; b(2:2:(n+1))]);
+    b = 2 * real([ b([$-n+1:2:$]) ; b(2:2:(n+1))]);
   end
 
+
+//Multiplication in the time domain is convolution in frequency,
+//so multiply by our window now to smooth the frequency response.
+//Also, for matlab compatibility, we return return values in 1 row
+  b = b(:)' .* window_out(:)';
+  
 endfunction

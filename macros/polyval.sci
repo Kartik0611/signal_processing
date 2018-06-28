@@ -19,10 +19,10 @@ if ~(isvector(p) | isempty(p))  // Check input is a vector
 end
 
 nc = length(p);
-if isscalar(x) & (argn(2) < 3) & nc>0 & isfinite(x) & all(isfinite(p(:)))
+if isscalar(x) & (argn(2) < 3) & nc>0 & (x~=%inf) & or(p(:)~=%inf)
     // Make it scream for scalar x.  Polynomial evaluation can be
     // implemented as a recursive digital filter.
-    y = filter(1,[1 -x],p);
+    y = filter(1,[1 -real(x)],p);
     y = y(nc);
     return
 end
