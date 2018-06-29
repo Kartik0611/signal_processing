@@ -104,7 +104,7 @@ function [eigenvects,eigenvals,msg] = computeEig(x,isCorrFlag, windowLength, nov
             window = repmat(window(:)',size(x,1),1);
             x = x.*window;
         end
-        
+        window= repmat(window(:)',size(x,1),1);
         // computing eignevals and eigenvectors of R using SVD of x
         
         // disp("X = (before SVD)");
