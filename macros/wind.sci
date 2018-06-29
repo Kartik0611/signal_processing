@@ -27,7 +27,8 @@ lhs = argn(1)
 if(type(f)==10)          // Checking whether 'f' is string or not
     if(f=="bartlett" | f=="blackman" | f=="blackmanharris"  | f=="bohmanwin" | f=="boxcar" |...
         f=="barthannwin" | f=="chebwin"| f=="flattopwin" | f=="gausswin" | f=="hamming" |...
-        f=="hanning" | f=="hann" | f=="kaiser" | f=="parzenwin" | f=="triang")
+        f=="hanning" | f=="hann" | f=="kaiser" | f=="parzenwin" | f=="triang" |...
+        f=="rectwin" | f=="tukeywin" | f=="blackmannuttall" | f=="nuttallwin")
         if(rhs<2)
             error("Wrong number of input arguments.")
         else
