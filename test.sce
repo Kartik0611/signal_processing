@@ -1,4 +1,4 @@
-exec ("/home/kartikhegde/Downloads/FOSSEE_Scilab_Octave_Interface_Toolbox/loader.sce")
+//exec ("/home/kartikhegde/Downloads/FOSSEE_Scilab_Octave_Interface_Toolbox/loader.sce")
 exec("loader.sce")
 exec("builder.sce")
 exec("unloader.sce")
@@ -209,7 +209,7 @@ inputVmax = VmaxPk*sin(2*%pi*Fi*t);
 
 outputVmax = helperHarmonicDistortion(inputVmax);
 outputVmax=outputVmax';
-outputVmax=roundn(outputVmax,5);
+outputVmax=roundn(outputVmax,3);
 M=fscanfMat("macros/txt3_helperHDA.txt")
 
 if(M==outputVmax)
