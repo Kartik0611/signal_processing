@@ -218,7 +218,7 @@ else
            test_pass=[test_pass,0]
            disp("helperHarmonicDistortionAmplifier Test failed")
 end
-
+//
 ///////////////////////////////////////////////
 //
 //
@@ -415,9 +415,9 @@ end
 ///////////Test case for       18)chebwin                 //////////
 //
 k=(chebwin(7)*100)
-k=round(k)
+k=roundn(k,4)
 
-if(k==[6 32 76 100 76 32 6]') 
+if(k==[5.6504 31.6609 76.0121 100 76.0121 31.6609 5.6504]') 
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
@@ -429,9 +429,9 @@ end
 ///////////Test case for       19)flattopwin                 //////////
 //
 win=flattopwin(8,"periodic")
-win=round(win*1000)
+win=roundn(win,4)
 
-if(win==[1 -26 -56 444 1000 444 -56 -26]') 
+if(win==[0.0009 -0.0264 -0.0556 0.4435 1 0.4435 -0.0556 -0.0264]') 
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
@@ -443,9 +443,9 @@ end
 ///////////Test case for       20)hamming                 //////////
 //
 win=hamming(5)
-win=round(win*100)
+win=roundn(win,4)
 
-if(win==[8 54 100 54 8]') 
+if(win==[0.08 0.54 1 0.54 0.08]') 
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
@@ -457,9 +457,9 @@ end
 ///////////Test case for       21)hanning                 //////////
 //
 win=hanning(5)
-win=round(win*100)
+win=roundn(win,4)
 
-if(win==[0 50 100 50 0]') 
+if(win==[0 0.5 1 0.5 0]') 
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
@@ -471,13 +471,125 @@ end
 ///////////Test case for       22)hann                 //////////
 //
 win=hann(5)
-win=round(win*100)
+win=roundn(win,4)
 
-if(win==[0 50 100 50 0]') 
+if(win==[0 0.5 1 0.5 0]') 
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
 	disp("hann Test failed")
+end
+//
+//
+//
+///////////Test case for       23)nuttallwin                 //////////
+//
+win=nuttallwin(5)
+win=roundn(win,4)
+
+if(win==[0 0.2115 1 0.2115 0]') 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("nuttallwin Test failed")
+end
+//
+//
+//
+///////////Test case for       24)parzenwin                 //////////
+//
+win=parzenwin(5)
+win=roundn(win,4)
+
+if(win==[0.016 0.424 1 0.424 0.016]') 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("parzenwin Test failed")
+end
+//
+//
+//
+///////////Test case for       25)rectwin                 //////////
+//
+win=rectwin(5)
+
+if(win==[1 1 1 1 1]') 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("rectwin Test failed")
+end
+//
+//
+//
+///////////Test case for       26)tukeywin                 //////////
+//
+win=tukeywin(6)
+win=roundn(win,4)
+
+if(win==[0 0.9045 1 1 1 0.9045 0]') 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("tukeywin Test failed")
+end
+//
+//
+//
+///////////Test case for       27)wind                 //////////
+//
+win=wind("triang",4)
+
+if(win==[0.25 0.75 0.75 0.25]') 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("wind Test failed")
+end
+//
+//
+//
+///////////Test case for       28)oct_interp                 //////////
+//
+intp=oct_interp(1,2);
+intp=roundn(intp,4);
+
+if(intp==[0.4793 0.3626]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("oct_interp Test failed")
+end
+//
+//
+//
+///////////Test case for       29)fir1                 //////////
+//
+f1=fir1(2, .5, 'low', "hanning", 'scale');
+
+if(f1==[0 1 0]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("fir1 Test failed")
+end
+//
+//
+//
+///////////Test case for       30)fir2                 //////////
+//
+f = [0 0.6 0.6 1]; m = [1 1 0 0];
+b9  = fir2 (30, f, m, 9);
+b16 = fir2 (30, f, m, 16);
+b17 = fir2 (30, f, m, 17);
+b32 = fir2 (30, f, m, 32);
+
+if(b9==b16 & b17==b32 ) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("fir2 Test failed")
 end
 //
 //
